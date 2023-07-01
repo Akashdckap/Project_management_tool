@@ -65,8 +65,8 @@ class userController{
         $this->userModel->delete_Task($task_id);
         header('location:/');
     }
-    public function getDeletedTasks(){
-        $getDeleted = $this->userModel->getDeletedTasks();
+    public function getDeletedTasks($deleteId){
+        $getDeleted = $this->userModel->getDeletedTasks($deleteId['deleteTaskBtn']);
         require 'view/deletedTasks.php';
     }
     public function unDeletedTasks($id){

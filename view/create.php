@@ -6,11 +6,17 @@
             border: none;
             background-color: transparent;
         }
+        .addNew{
+            display: flex;
+        }
     </style>
 </head>
 <body>
+<h2>Project Management Tool</h2>
 <!--Project Insert Form-->
+<div class="addNew">
 <button id="new">Add new</button>
+</div>
 <form action="/insertProject" method="post" enctype="multipart/form-data">
     <label>Project Name</label>
     <input type="text" name="project_name">
@@ -19,11 +25,12 @@
 </form>
 
 <!--Project Name Fetches-->
+<h3>Project Names</h3>
 <table>
     <?php foreach ($fetchProjects as $projectNames): ?>
     <tr>
             <form method="post" action="/getProjectId">
-                <th><button type="submit" value="<?php echo $projectNames->id?>" name="id"><?php echo $projectNames->project_name ?></button></th>
+                <th><button type="submit" value="<?php echo $projectNames->id?>" name="id" class="btn"><?php echo $projectNames->project_name ?></button></th>
             </form>
     </tr>
     <?php endforeach; ?>

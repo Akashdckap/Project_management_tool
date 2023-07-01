@@ -25,8 +25,8 @@ class userModel extends database{
     public function delete_Task($taskID){
         $this->db->query("UPDATE tasks SET is_delete = now() WHERE id =  $taskID");
     }
-    public function getDeletedTasks(){
-        $getDelete = $this->db->query("SELECT * FROM tasks WHERE is_delete is not null");
+    public function getDeletedTasks($id){
+        $getDelete = $this->db->query("SELECT * FROM tasks WHERE is_delete is not null AND project_id = '$id'");
         return $getDelete->fetchAll(PDO::FETCH_OBJ);
     }
     public function cntDeleted($id){

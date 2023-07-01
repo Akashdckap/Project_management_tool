@@ -15,7 +15,7 @@
 
             <label>Task File:</label>
             <br>
-            <img src="<?php echo $Details->task_file?>" width="75px" height="75px">
+            <img src="<?php echo $Details->task_file?>" width="500px" height="300px">
             <br>
 
             <label>Task Description:</label>
@@ -27,6 +27,7 @@
         <form method="post" action="/deleteTask">
             <button type="submit" value="<?php echo $Details->id?>" name="taskId" >Delete Task</button>
         </form>
+        <br>
     </tr>
     <?php endforeach; ?>
 </table>

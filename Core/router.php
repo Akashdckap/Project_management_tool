@@ -49,7 +49,7 @@ class router{
                          $this->controller->deleteTask($_POST);
                          break;
                      case 'deletedTasks':
-                         $this->controller->getDeletedTasks();
+                         $this->controller->getDeletedTasks($_POST);
                          break;
                      case 'unDeletedTasks':
                          $this->controller->unDeletedTasks($_POST);
